@@ -1,0 +1,196 @@
+The 
+ en_US.blogs.txt 
+ en_US.blogs.txt start verbatim, en_US.blogs.txt , end verbatim  file is how many megabytes?
+
+
+200
+
+
+
+150
+
+
+
+250
+
+
+
+100
+
+
+Correct
+Do 
+ ls -alh
+ ls -alhstart verbatim, ls -alh, end verbatim in the 
+Coursera-Swiftkey/final/en_US
+Coursera-Swiftkey/final/en_USstart verbatim, Coursera-Swiftkey/final/en_US, end verbatim directory.
+
+1 / 1 point
+2.
+Question 2
+The 
+en_US.twitter.txt
+en_US.twitter.txtstart verbatim, en_US.twitter.txt, end verbatim has how many lines of text?
+
+
+Around 2 hundred thousand
+
+
+
+Over 2 million
+
+
+
+Around 5 hundred thousand
+
+
+
+Around 1 million
+
+
+Correct
+Do 
+wc -l en_US.twitter.txt
+wc -l en_US.twitter.txtstart verbatim, wc -l en_US.twitter.txt, end verbatim at the prompt (or git bash on windows) or 
+length(readLines("en_US.twitter.txt")) 
+length(readLines("en_US.twitter.txt")) start verbatim, length(readLines("en_US.twitter.txt")) , end verbatim in R
+
+1 / 1 point
+3.
+Question 3
+What is the length of the longest line seen in any of the three en_US data sets? 
+
+
+Over 40 thousand in the blogs data set
+
+
+
+Over 40 thousand in the news data set
+
+
+
+Over 11 thousand in the blogs data set
+
+
+
+Over 11 thousand in the news data set
+
+
+Correct
+Again a simple wc command suffices 
+wc -L *.txt
+wc -L *.txtstart verbatim, wc -L *.txt, end verbatim inthe directory with the three files. Note, we had a small discrepancy between doing thin in R versus WC.
+
+1 / 1 point
+4.
+Question 4
+In the en_US twitter data set, if you divide the number of lines where the word "love" (all lowercase) occurs by the number of lines the word "hate" (all lowercase) occurs, about what do you get?
+
+
+4
+
+
+
+0.25
+
+
+
+0.5
+
+
+
+2
+
+
+Correct
+ grep "love" en_US.twitter 
+w
+c
+−
+l
+∣
+ grep "love" en_US.twitter wc−l∣start verbatim, grep "love" en_US.twitter , end verbatim, w, c, minus, l, vertical bar and
+
+ grep "hate" en_US.twitter 
+w
+c
+−
+l
+∣
+ grep "hate" en_US.twitter wc−l∣start verbatim, grep "hate" en_US.twitter , end verbatim, w, c, minus, l, vertical bar gives you the counts. Then you could divide in whatever. If you never want to leave the console, you can use bc (not present on gitbash in windows). You could also read into R (
+readLines
+readLinesstart verbatim, readLines, end verbatim) and use character search. 
+
+This worked on gitbash
+
+  love=$(grep "love" en_US.twitter.txt  
+w
+c
+−
+l
+)
+∣
+  love=$(grep "love" en_US.twitter.txt  wc−l)∣start verbatim, love=$(grep "love" en_US.twitter.txt , end verbatim, w, c, minus, l, right parenthesis, vertical bar then
+
+ hate=$(grep "hate" en_US.twitter.txt  
+w
+c
+−
+l
+)
+∣
+ hate=$(grep "hate" en_US.twitter.txt  wc−l)∣start verbatim, hate=$(grep "hate" en_US.twitter.txt , end verbatim, w, c, minus, l, right parenthesis, vertical bar then
+
+ let m=love/hate
+ let m=love/hatestart verbatim, let m=love/hate, end verbatim then
+
+  echo $m 
+  echo $m start verbatim, echo $m , end verbatim
+
+1 / 1 point
+5.
+Question 5
+The one tweet in the en_US twitter data set that matches the word "biostats" says what?
+
+
+They need biostats help on their project
+
+
+
+They haven't studied for their biostats exam
+
+
+
+They just enrolled in a biostat program
+
+
+
+It's a tweet about Jeff Leek from one of his students in class
+
+
+Correct
+ grep -i "biostat" en_US.twitter.txt
+ grep -i "biostat" en_US.twitter.txtstart verbatim, grep -i "biostat" en_US.twitter.txt, end verbatim (note the -i doesn't matter since there's only one line ignoring case).
+
+1 / 1 point
+6.
+Question 6
+How many tweets have the exact characters "A computer once beat me at chess, but it was no match for me at kickboxing". (I.e. the line matches those characters exactly.)
+
+
+2
+
+
+
+3
+
+
+
+1
+
+
+
+0
+
+
+Incorrect
