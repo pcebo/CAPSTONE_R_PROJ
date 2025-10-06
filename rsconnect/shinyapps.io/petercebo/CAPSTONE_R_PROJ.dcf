@@ -1,0 +1,12 @@
+name: CAPSTONE_R_PROJ
+title: CAPSTONE_R_PROJ
+username: petercebo
+account: petercebo
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15664091
+bundleId: 10996109
+url: https://petercebo.shinyapps.io/CAPSTONE_R_PROJ/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

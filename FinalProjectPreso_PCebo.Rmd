@@ -1,0 +1,52 @@
+---
+title: "JHU Data Science Capstone"
+subtitle: "Click anywhere on slide and use your right arrow to advance! →"
+author: "Peter Cebo"
+date: "2025-10-06"
+output: 
+  ioslides_presentation:
+    widescreen: true
+    transition: faster      
+    logo: jhu_logo_sq.png       
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 📱 The Challenge
+
+For the Johns Hopkins Data Science Capstone Project, the challenge was to build a **next word prediction (NLP) model, using R**. The aid with building the model, we were given a large data set of US English text (>550MB).
+
+- **102 million-word training corpus** 
+- Corpus comprised of twitter (X), news and blog - raw text data.
+
+## 🔧 The Innovative 💡 Solution
+
+The final model chosen  utilizes a 5-gram backoff algorithm with intelligent two-word chaining for and improved user experience. 
+
+### How It Works
+
+1. The model analyzes user input and extracts context (up to 4 words)
+2. Attempts to match against 5-gram patterns (sequences of 5 words). This lookup is extremely fast thanks to implementation of hashing during the model building phase.
+3. If no match is found, the model "backs off" to shorter n-grams (5→4→3→2→1)
+4. To improve UI, if a prediction is a stopword, the model chains to predict the next word and gives a 2-word prediction.
+5. Finally, the model returns top 3 most likely continuations to the user input
+
+## 📊 Model Performance
+
+- **28.2% top-3 accuracy** on held-out test data (15% of corpus)
+- **14.8 MB model size** - fits on any smartphone
+- **~30ms median prediction time** - wait time is completely imperceptible to users
+- **Smart two-word chaining** - e.g. predicts "the beach" instead of just "the"
+- **102 million-word training corpus** - trained on twitter (X), news and blog text data in US English.
+
+## 🚀 Demo
+
+- Please see the web app live demo of the model [**HERE**](https://petercebo.shinyapps.io/CAPSTONE_R_PROJ/) (Opens web page. Model use instruction are on page.)
+- For those curious, more details are available by following the "documentation" link from the DEMO page.
+- Thank you to **Swiftkey** and the **course instructors at JHU** for this great learning opportunity and for all your guidance.
+- If you'd like to run the model locally, the model and R code are available on my [**Github repo.**](https://github.com/pcebo/CAPSTONE_R_PROJ)
+
+Thank you so much for reading!
+
+Piotr (Peter) Cebo | Reach out to me on [**LinkedIn!**](https://www.linkedin.com/in/petercebo/)  
